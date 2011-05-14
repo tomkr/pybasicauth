@@ -1,6 +1,6 @@
 class BasicAuthMiddleware(object):
 
-    def __init__(self,app, username, password, realm='protected'):
+    def __init__(self, app, username, password, realm='protected'):
         """Initializes the middleware."""
         self.app = app
         self.username = username
@@ -21,7 +21,7 @@ class BasicAuthMiddleware(object):
         app_iter = self.app(environ, self._401_callback(start_response))
         return ['Please authenticate',]
 
-    def _401_callback(self,start_response):
+    def _401_callback(self, start_response):
         """Turns a response into a 401 response"""
         def callback(status, headers, exc_info=None):
             status='401 Unauthorized'
