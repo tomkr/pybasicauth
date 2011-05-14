@@ -1,0 +1,7 @@
+pybasicauth is a wsgi middleware that ensures people need to be
+authenticated to enter a webpage. It does not register who a user is,
+it merely closes off a site to the general public. For instance when
+setting up a test instance of a Flask app on dotcloud (which is what
+it was developed for). Normally you can do some server settings, but
+this way you can take your authentication with you when you switch to
+a new server.
